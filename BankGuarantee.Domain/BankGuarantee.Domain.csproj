@@ -45,6 +45,7 @@
     <Compile Include="Models\Guarantee.cs" />
     <Compile Include="Models\Organization.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Credential.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

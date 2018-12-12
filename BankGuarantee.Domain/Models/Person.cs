@@ -11,7 +11,6 @@ namespace BankGuarantee.Domain.Models
         public string Middlename { get; set; }
         public string Surname { get; set; }
         public Appointment Appointment { get; set; }
-
-        public Organization[] Organizations { get; set; }
+        
     }
 }

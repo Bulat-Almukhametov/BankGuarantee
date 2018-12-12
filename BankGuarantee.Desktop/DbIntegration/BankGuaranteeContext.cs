@@ -16,5 +16,6 @@ namespace BankGuarantee.Desktop.DbIntegration
         public DbSet<Guarantee> Guarantees { get; set; }
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<Person> People { get; set; }
+        public DbSet<Credential> Credentials { get; set; }
     }
 }
