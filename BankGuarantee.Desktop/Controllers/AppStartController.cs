@@ -8,17 +8,31 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using BankGuarantee.Desktop.Properties;
 using BankGuarantee.Domain.Models;
+using BankGuarantee.Desktop.Forms;
+using System.Windows.Forms;
 
 namespace BankGuarantee.Desktop.Controllers
 {
-    static class AuthenticationController
+    static class AppStartController
     {
         static BankGuaranteeContext _bankGuaranteeContext;
+        static Form _startForm;
 
-        static AuthenticationController()
+        static AppStartController()
         {
             _bankGuaranteeContext = new BankGuaranteeContext();
         }
+
+        static internal void SetStartForm(Form form)
+        {
+            _startForm = form;
+        }
+
+        static internal void CloseApp()
+        {
+            _startForm.Close();
+        }
+
         static internal LoginResultDto Login(LoginInputDto input)
         {
             Person person;
@@ -46,7 +60,10 @@ namespace BankGuarantee.Desktop.Controllers
 
             if (result.Success)
             {
-                result.NextForm = new System.Windows.Forms.Form();
+                if (person.Appointment == Appointment.Manager)
+                    result.NextForm = new GuaranteeCreateForm();
+                else
+                    result.NextForm = new GuaranteesListForm();
             }
             else
             {

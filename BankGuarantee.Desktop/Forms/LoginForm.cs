@@ -17,11 +17,13 @@ namespace BankGuarantee.Desktop
         public LoginForm()
         {
             InitializeComponent();
+            AppStartController.SetStartForm(this);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
-            var loginResult = AuthenticationController.Login(new LoginInputDto
+            // Авторизация
+            var loginResult = AppStartController.Login(new LoginInputDto
             {
                 Login = loginTextBox.Text,
                 Password = passwordTextBox.Text
@@ -29,10 +31,13 @@ namespace BankGuarantee.Desktop
 
             if (loginResult.Success)
             {
-                MessageBox.Show("Ура");
+                // Если авторизировались, открываем следующую форму
+                this.Hide();
+                loginResult.NextForm.Show();
             }
             else
             {
+                // Если авторизация не удалась, показываем сообщение
                 MessageBox.Show(loginResult.ErrorText);
             }
         }
