@@ -52,18 +52,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BankGuaranteeDataSet.Designer.cs">
+    <Compile Include="DbIntegration\BankGuaranteeDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BankGuaranteeDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="BankGuaranteeDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BankGuaranteeDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\AppStartController.cs" />
+    <Compile Include="Controllers\GuaranteeController.cs" />
     <Compile Include="DbIntegration\BankGuaranteeContext.cs" />
+    <Compile Include="Forms\FormHelpers\LocationHelper.cs" />
     <Compile Include="Forms\GuaranteeCreateForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +85,7 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IGuaranteeViewOpener.cs" />
     <Compile Include="Migrations\201812111750295_InitialCreate.cs" />
     <Compile Include="Migrations\201812111750295_InitialCreate.Designer.cs">
       <DependentUpon>201812111750295_InitialCreate.cs</DependentUpon>
@@ -114,9 +112,6 @@
     <EmbeddedResource Include="Forms\GuaranteeViewForm.resx">
       <DependentUpon>GuaranteeViewForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LoginForm.lkt-US.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,27 +134,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="BankGuaranteeDataSet.xsc">
+    <None Include="DbIntegration\BankGuaranteeDataSet.xsc">
       <DependentUpon>BankGuaranteeDataSet.xsd</DependentUpon>
     </None>
-    <None Include="BankGuaranteeDataSet.xsd">
+    <None Include="DbIntegration\BankGuaranteeDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>BankGuaranteeDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="BankGuaranteeDataSet.xss">
+    <None Include="DbIntegration\BankGuaranteeDataSet.xss">
       <DependentUpon>BankGuaranteeDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BankGuaranteeDataSet1.xsc">
-      <DependentUpon>BankGuaranteeDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="BankGuaranteeDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BankGuaranteeDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BankGuaranteeDataSet1.xss">
-      <DependentUpon>BankGuaranteeDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -1,4 +1,6 @@
-﻿namespace BankGuarantee.Desktop.Forms
+﻿using BankGuarantee.Desktop.DbIntegration;
+
+namespace BankGuarantee.Desktop.Forms
 {
     partial class GuaranteesListForm
     {
@@ -30,109 +32,138 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuaranteesListForm));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bankGuaranteeDataSet1 = new BankGuarantee.Desktop.BankGuaranteeDataSet1();
-            this.guaranteesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.guaranteesTableAdapter = new BankGuarantee.Desktop.BankGuaranteeDataSet1TableAdapters.GuaranteesTableAdapter();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.daysDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bankGuaranteeDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guaranteesBindingSource)).BeginInit();
+            this.guaranteesDataGridView = new System.Windows.Forms.DataGridView();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bankGuaranteeDataSet = new BankGuarantee.Desktop.DbIntegration.BankGuaranteeDataSet();
+            this.guaranteesTableAdapter = new BankGuarantee.Desktop.DbIntegration.BankGuaranteeDataSetTableAdapters.GuaranteesTableAdapter();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Days = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ViewColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.guaranteesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bankGuaranteeDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // guaranteesDataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.startDateDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.amountDataGridViewTextBoxColumn,
-            this.daysDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.guaranteesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(756, 354);
-            this.dataGridView1.TabIndex = 0;
+            this.guaranteesDataGridView.AllowUserToAddRows = false;
+            this.guaranteesDataGridView.AllowUserToDeleteRows = false;
+            this.guaranteesDataGridView.AllowUserToOrderColumns = true;
+            this.guaranteesDataGridView.AutoGenerateColumns = false;
+            this.guaranteesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.guaranteesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.StartDate,
+            this.Name,
+            this.Amount,
+            this.Days,
+            this.ViewColumn});
+            this.guaranteesDataGridView.DataSource = this.bindingSource1;
+            this.guaranteesDataGridView.Location = new System.Drawing.Point(12, 12);
+            this.guaranteesDataGridView.Name = "guaranteesDataGridView";
+            this.guaranteesDataGridView.ReadOnly = true;
+            this.guaranteesDataGridView.Size = new System.Drawing.Size(756, 354);
+            this.guaranteesDataGridView.TabIndex = 0;
+            this.guaranteesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guaranteesDataGridView_CellContentClick);
             // 
-            // bankGuaranteeDataSet1
+            // bindingSource1
             // 
-            this.bankGuaranteeDataSet1.DataSetName = "BankGuaranteeDataSet1";
-            this.bankGuaranteeDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.bindingSource1.DataMember = "Guarantees";
+            this.bindingSource1.DataSource = this.bankGuaranteeDataSet;
             // 
-            // guaranteesBindingSource
+            // bankGuaranteeDataSet
             // 
-            this.guaranteesBindingSource.DataMember = "Guarantees";
-            this.guaranteesBindingSource.DataSource = this.bankGuaranteeDataSet1;
+            this.bankGuaranteeDataSet.DataSetName = "BankGuaranteeDataSet";
+            this.bankGuaranteeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // guaranteesTableAdapter
             // 
             this.guaranteesTableAdapter.ClearBeforeFill = true;
             // 
-            // startDateDataGridViewTextBoxColumn
+            // Id
             // 
-            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.HeaderText = "Начало";
-            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-            this.startDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
-            // nameDataGridViewTextBoxColumn
+            // StartDate
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Банковская гарантия";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 360;
+            this.StartDate.DataPropertyName = "StartDate";
+            this.StartDate.HeaderText = "Начало";
+            this.StartDate.Name = "StartDate";
+            this.StartDate.ReadOnly = true;
             // 
-            // amountDataGridViewTextBoxColumn
+            // Name
             // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Сумма";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Name.DataPropertyName = "Name";
+            this.Name.HeaderText = "Банковская гарантия";
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            this.Name.Width = 300;
             // 
-            // daysDataGridViewTextBoxColumn
+            // Amount
             // 
-            this.daysDataGridViewTextBoxColumn.DataPropertyName = "Days";
-            this.daysDataGridViewTextBoxColumn.HeaderText = "Продолжительность (дней)";
-            this.daysDataGridViewTextBoxColumn.Name = "daysDataGridViewTextBoxColumn";
-            this.daysDataGridViewTextBoxColumn.ReadOnly = true;
-            this.daysDataGridViewTextBoxColumn.Width = 150;
+            this.Amount.DataPropertyName = "Amount";
+            this.Amount.HeaderText = "Cумма";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
+            // 
+            // Days
+            // 
+            this.Days.DataPropertyName = "Days";
+            this.Days.HeaderText = "Продолжительность (дней)";
+            this.Days.Name = "Days";
+            this.Days.ReadOnly = true;
+            this.Days.Width = 120;
+            // 
+            // ViewColumn
+            // 
+            this.ViewColumn.HeaderText = "Просмотр";
+            this.ViewColumn.Name = "ViewColumn";
+            this.ViewColumn.ReadOnly = true;
+            this.ViewColumn.Text = "Открыть";
+            this.ViewColumn.UseColumnTextForButtonValue = true;
+            this.ViewColumn.Width = 80;
             // 
             // GuaranteesListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.guaranteesDataGridView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "GuaranteesListForm";
+            //this.Name = "GuaranteesListForm";
             this.Text = "Список гарантий";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GuaranteesListForm_FormClosed);
             this.Load += new System.EventHandler(this.GuaranteesListForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bankGuaranteeDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guaranteesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guaranteesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bankGuaranteeDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private BankGuaranteeDataSet1 bankGuaranteeDataSet1;
+        private System.Windows.Forms.DataGridView guaranteesDataGridView;
         private System.Windows.Forms.BindingSource guaranteesBindingSource;
-        private BankGuaranteeDataSet1TableAdapters.GuaranteesTableAdapter guaranteesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn daysDataGridViewTextBoxColumn;
+        private BankGuaranteeDataSet bankGuaranteeDataSet;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private DbIntegration.BankGuaranteeDataSetTableAdapters.GuaranteesTableAdapter guaranteesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Days;
+        private System.Windows.Forms.DataGridViewButtonColumn ViewColumn;
     }
 }
