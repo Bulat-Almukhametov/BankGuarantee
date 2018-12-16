@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\OrganizationController.cs" />
     <Compile Include="DbIntegration\BankGuaranteeDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -60,6 +61,7 @@
     <Compile Include="Controllers\AppStartController.cs" />
     <Compile Include="Controllers\GuaranteeController.cs" />
     <Compile Include="DbIntegration\BankGuaranteeContext.cs" />
+    <Compile Include="Forms\FormHelpers\ComponentBindingHelper.cs" />
     <Compile Include="Forms\FormHelpers\LocationHelper.cs" />
     <Compile Include="Forms\GuaranteeCreateForm.cs">
       <SubType>Form</SubType>
@@ -99,6 +101,7 @@
       <DependentUpon>201812130618352_AddGuaranteeNameColumn.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\GetOrganizationNamesResultDto.cs" />
     <Compile Include="Models\LoginInputDto.cs" />
     <Compile Include="Models\LoginResultDto.cs" />
     <Compile Include="Program.cs" />

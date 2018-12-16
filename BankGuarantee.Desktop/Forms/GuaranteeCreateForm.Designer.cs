@@ -33,20 +33,20 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.organizationsComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.innTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.ogrnTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.ageTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.addressTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.founderTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.chiefTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -81,13 +81,15 @@
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 1;
             // 
-            // comboBox1
+            // organizationsComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(73, 90);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
+            this.organizationsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.organizationsComboBox.FormattingEnabled = true;
+            this.organizationsComboBox.Location = new System.Drawing.Point(73, 90);
+            this.organizationsComboBox.Name = "organizationsComboBox";
+            this.organizationsComboBox.Size = new System.Drawing.Size(121, 21);
+            this.organizationsComboBox.TabIndex = 2;
+            this.organizationsComboBox.SelectedIndexChanged += new System.EventHandler(this.organizationsComboBox_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -108,13 +110,13 @@
             this.label4.Text = "ИНН";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBox3
+            // innTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(73, 142);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 1;
+            this.innTextBox.Location = new System.Drawing.Point(73, 142);
+            this.innTextBox.Name = "innTextBox";
+            this.innTextBox.ReadOnly = true;
+            this.innTextBox.Size = new System.Drawing.Size(100, 20);
+            this.innTextBox.TabIndex = 1;
             // 
             // label5
             // 
@@ -125,13 +127,13 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "ОГРН";
             // 
-            // textBox4
+            // ogrnTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(73, 189);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 1;
+            this.ogrnTextBox.Location = new System.Drawing.Point(73, 189);
+            this.ogrnTextBox.Name = "ogrnTextBox";
+            this.ogrnTextBox.ReadOnly = true;
+            this.ogrnTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ogrnTextBox.TabIndex = 1;
             // 
             // label6
             // 
@@ -142,13 +144,13 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Возраст компании";
             // 
-            // textBox5
+            // ageTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(73, 235);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 1;
+            this.ageTextBox.Location = new System.Drawing.Point(73, 235);
+            this.ageTextBox.Name = "ageTextBox";
+            this.ageTextBox.ReadOnly = true;
+            this.ageTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ageTextBox.TabIndex = 1;
             // 
             // label7
             // 
@@ -159,13 +161,13 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Юридический адрес";
             // 
-            // textBox6
+            // addressTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(73, 285);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 1;
+            this.addressTextBox.Location = new System.Drawing.Point(73, 285);
+            this.addressTextBox.Name = "addressTextBox";
+            this.addressTextBox.ReadOnly = true;
+            this.addressTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addressTextBox.TabIndex = 1;
             // 
             // label8
             // 
@@ -176,13 +178,13 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Учредитель";
             // 
-            // textBox7
+            // founderTextBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(72, 332);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 1;
+            this.founderTextBox.Location = new System.Drawing.Point(72, 332);
+            this.founderTextBox.Name = "founderTextBox";
+            this.founderTextBox.ReadOnly = true;
+            this.founderTextBox.Size = new System.Drawing.Size(100, 20);
+            this.founderTextBox.TabIndex = 1;
             // 
             // label9
             // 
@@ -193,32 +195,32 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Директор";
             // 
-            // textBox8
+            // chiefTextBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(73, 382);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 1;
+            this.chiefTextBox.Location = new System.Drawing.Point(73, 382);
+            this.chiefTextBox.Name = "chiefTextBox";
+            this.chiefTextBox.ReadOnly = true;
+            this.chiefTextBox.Size = new System.Drawing.Size(100, 20);
+            this.chiefTextBox.TabIndex = 1;
             // 
             // GuaranteeCreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.organizationsComboBox);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.chiefTextBox);
+            this.Controls.Add(this.founderTextBox);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.addressTextBox);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.ageTextBox);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.ogrnTextBox);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.innTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
@@ -240,19 +242,19 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox organizationsComboBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox innTextBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox ogrnTextBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox ageTextBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox addressTextBox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox founderTextBox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox chiefTextBox;
     }
 }

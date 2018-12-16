@@ -123,4 +123,7 @@
   <data name="DatabaseError" xml:space="preserve">
     <value>Во время работы с базой данных произошла ошибка</value>
   </data>
+  <data name="WrongId" xml:space="preserve">
+    <value>Не найдено записей с заданным идентификатором</value>
+  </data>
 </root>

@@ -77,5 +77,14 @@ namespace BankGuarantee.Desktop.Properties {
                 return ResourceManager.GetString("DatabaseError", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не найдено записей с заданным идентификатором.
+        /// </summary>
+        internal static string WrongId {
+            get {
+                return ResourceManager.GetString("WrongId", resourceCulture);
+            }
+        }
     }
 }
