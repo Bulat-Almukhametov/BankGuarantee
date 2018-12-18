@@ -15,13 +15,19 @@ namespace BankGuarantee.Desktop.Controllers
 
         static PersonController()
         {
+            // создаем объект для работы с БД
             _bankGuaranteeContext = new BankGuaranteeContext();
         }
 
+        /// <summary>
+        /// Возвращает список всех людей для поля выбора из списка
+        /// </summary>
+        /// <returns></returns>
         static internal EntitiesDisplayValuesResultDto PeopleList()
         {
             try
             {
+                // получаем людей из БД
                 var people = _bankGuaranteeContext.People
                      .Select(p => new { p.Id, p.Surname, p.Name, p.Middlename })
                      .ToDictionary(p => p.Id, p => p.Surname + " " + p.Name + " " + p.Middlename);
@@ -30,6 +36,7 @@ namespace BankGuarantee.Desktop.Controllers
             }
             catch (Exception ex)
             {
+                // ошибка при получении из БД
                 return new EntitiesDisplayValuesResultDto(Resources.DatabaseError + ex.Message);
             }
         }

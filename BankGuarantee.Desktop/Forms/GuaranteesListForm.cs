@@ -22,9 +22,7 @@ namespace BankGuarantee.Desktop.Forms
 
         private void GuaranteesListForm_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "bankGuaranteeDataSet.Guarantees". При необходимости она может быть перемещена или удалена.
             this.guaranteesTableAdapter.Fill(this.bankGuaranteeDataSet.Guarantees);
-
         }
 
         private void guaranteesBindingSource_CurrentChanged(object sender, EventArgs e)

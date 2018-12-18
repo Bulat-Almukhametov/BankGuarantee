@@ -94,6 +94,12 @@
     <Compile Include="Forms\OrganizationCreateForm.Designer.cs">
       <DependentUpon>OrganizationCreateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QuestionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QuestionsForm.Designer.cs">
+      <DependentUpon>QuestionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IGuaranteeViewOpener.cs" />
     <Compile Include="Interfaces\IOrganizationCreator.cs" />
     <Compile Include="Migrations\201812111750295_InitialCreate.cs" />
@@ -107,6 +113,10 @@
     <Compile Include="Migrations\201812130618352_AddGuaranteeNameColumn.cs" />
     <Compile Include="Migrations\201812130618352_AddGuaranteeNameColumn.Designer.cs">
       <DependentUpon>201812130618352_AddGuaranteeNameColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812181825078_CreateContract.cs" />
+    <Compile Include="Migrations\201812181825078_CreateContract.Designer.cs">
+      <DependentUpon>201812181825078_CreateContract.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EntitiesDisplayValuesResultDto.cs" />
@@ -131,6 +141,9 @@
     <EmbeddedResource Include="Forms\OrganizationCreateForm.resx">
       <DependentUpon>OrganizationCreateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuestionsForm.resx">
+      <DependentUpon>QuestionsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812111750295_InitialCreate.resx">
       <DependentUpon>201812111750295_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812130618352_AddGuaranteeNameColumn.resx">
       <DependentUpon>201812130618352_AddGuaranteeNameColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812181825078_CreateContract.resx">
+      <DependentUpon>201812181825078_CreateContract.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

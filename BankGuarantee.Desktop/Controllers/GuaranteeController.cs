@@ -14,6 +14,9 @@ using BankGuarantee.Desktop.Properties;
 
 namespace BankGuarantee.Desktop.Controllers
 {
+    /// <summary>
+    /// Класс для методов по работе с банковскими гарантиями
+    /// </summary>
     internal static class GuaranteeController
     {
         static BankGuaranteeContext _bankGuaranteeContext;
@@ -21,9 +24,16 @@ namespace BankGuarantee.Desktop.Controllers
 
         static GuaranteeController()
         {
+            // создаем объект для доступа к БД
             _bankGuaranteeContext = new BankGuaranteeContext();
         }
 
+        /// <summary>
+        /// Открывает форму для просмотра подробностей для конкретной бг
+        /// </summary>
+        /// <param name="guaranteeId">идентификатор записи</param>
+        /// <param name="guaranteeFormOpener">ссылка на форму, открывшую подробности</param>
+        /// <returns></returns>
         internal static Form ViewGuaranteeItem(int guaranteeId, IGuaranteeViewOpener guaranteeFormOpener)
         {
             _guaranteeFormOpener = guaranteeFormOpener;
@@ -35,8 +45,12 @@ namespace BankGuarantee.Desktop.Controllers
                 .First(g => g.Id == guaranteeId);
 
             return new GuaranteeViewForm(guarantee);
-        } 
+        }
 
+        /// <summary>
+        /// Происходит при закрытии формы для просмотра бг 
+        /// </summary>
+        /// <param name="guaranteeViewForm">форма для просмотра бг</param>
         internal static void ViewGuaranteeItemClosed(Form guaranteeViewForm)
         {
             _guaranteeFormOpener.OnGuaranteeViewClosed(guaranteeViewForm);

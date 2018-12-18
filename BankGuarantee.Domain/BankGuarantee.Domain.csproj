@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Appointment.cs" />
+    <Compile Include="Models\Contract.cs" />
     <Compile Include="Models\Guarantee.cs" />
     <Compile Include="Models\Organization.cs" />
     <Compile Include="Models\Person.cs" />

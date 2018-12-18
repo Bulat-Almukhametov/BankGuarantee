@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace BankGuarantee.Desktop.DbIntegration
 {
+    // класс для работы с БД, содержит все таблицы для получения данных
     class BankGuaranteeContext : DbContext
     {
         public BankGuaranteeContext()
@@ -17,5 +18,6 @@ namespace BankGuarantee.Desktop.DbIntegration
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<Person> People { get; set; }
         public DbSet<Credential> Credentials { get; set; }
+        public DbSet<Contract> Contracts { get; set; }
     }
 }

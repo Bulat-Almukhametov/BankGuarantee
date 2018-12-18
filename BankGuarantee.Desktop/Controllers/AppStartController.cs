@@ -1,10 +1,7 @@
 ﻿using BankGuarantee.Desktop.DbIntegration;
 using BankGuarantee.Desktop.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.Entity;
 using BankGuarantee.Desktop.Properties;
 using BankGuarantee.Domain.Models;
@@ -20,21 +17,35 @@ namespace BankGuarantee.Desktop.Controllers
 
         static AppStartController()
         {
+            // создаем объект для подключения к БД
             _bankGuaranteeContext = new BankGuaranteeContext();
         }
 
+        /// <summary>
+        /// запоминаем форму связанную с приложением
+        /// </summary>
+        /// <param name="form"></param>
         static internal void SetStartForm(Form form)
         {
             _startForm = form;
         }
 
+        /// <summary>
+        /// закрываем приложение
+        /// </summary>
         static internal void CloseApp()
         {
             _startForm.Close();
         }
 
+        /// <summary>
+        /// логинимся в системе
+        /// </summary>
+        /// <param name="input">данные передаваемые для логина</param>
+        /// <returns></returns>
         static internal LoginResultDto Login(LoginInputDto input)
         {
+            // Проверяем логин и пароль, получаем данные о человеке
             Person person;
             try
             {
@@ -45,6 +56,7 @@ namespace BankGuarantee.Desktop.Controllers
             }
             catch (Exception ex)
             {
+                // при ошибке с БД возвращаем информацию об ошибке
                 return new LoginResultDto
                 {
                     Success = false,
@@ -58,19 +70,30 @@ namespace BankGuarantee.Desktop.Controllers
                 Success = person != null
             };
 
+            // 
             if (result.Success)
             {
+                // открываем соответствующие страницы для менеджера и специалиста
                 if (person.Appointment == Appointment.Manager)
                     result.NextForm = new GuaranteeCreateForm();
                 else
-                    result.NextForm = new GuaranteesListForm();
+                    result.NextForm = new QuestionsForm();
             }
             else
             {
+                // если человек не найден, то выводим ошибку, что данные введены некорректно
                 result.ErrorText = Resources.CredentialsDenied;
             }
 
             return result;
+        }
+
+        internal static Form AnswerQuestions(int contractSum)
+        {
+            _bankGuaranteeContext.Contracts.Add(new Contract { CreatedOn = DateTime.Now, Ammount = contractSum});
+            _bankGuaranteeContext.SaveChanges();
+
+            return new GuaranteesListForm();
         }
     }
 }
