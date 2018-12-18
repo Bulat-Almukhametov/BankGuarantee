@@ -15,5 +15,27 @@ namespace BankGuarantee.Desktop.Forms.FormHelpers
             combobox.DisplayMember = "Value";
             combobox.ValueMember = "Key";
         }
+
+        /// <summary>
+        /// значение у выделенного элемента приходит как int или как KeyValuePair<int, string>
+        /// </summary>
+        /// <param name="sender">ComboBox</param>
+        /// <returns>id</returns>         
+        internal static int GetComboboxItemKey(object sender)
+        {
+            var combobox = sender as ComboBox;
+            KeyValuePair<int, string>? keyValuePair = combobox.SelectedValue as KeyValuePair<int, string>?;
+            int id;
+            if (keyValuePair.HasValue)
+            {
+                id = keyValuePair.Value.Key;
+            }
+            else
+            {
+                id = (int)combobox.SelectedValue;
+            }
+
+            return id;
+        }
     }
 }

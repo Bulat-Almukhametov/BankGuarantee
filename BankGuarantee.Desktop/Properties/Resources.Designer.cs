@@ -61,6 +61,24 @@ namespace BankGuarantee.Desktop.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Банковская гарантия .
+        /// </summary>
+        internal static string BankGuarantee {
+            get {
+                return ResourceManager.GetString("BankGuarantee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Создать.
+        /// </summary>
+        internal static string CreateNew {
+            get {
+                return ResourceManager.GetString("CreateNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Введены неправильные данные для входа.
         /// </summary>
         internal static string CredentialsDenied {

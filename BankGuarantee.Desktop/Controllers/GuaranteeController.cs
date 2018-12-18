@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 using BankGuarantee.Desktop.Interfaces;
+using BankGuarantee.Desktop.Models;
+using BankGuarantee.Domain.Models;
+using BankGuarantee.Desktop.Properties;
 
 namespace BankGuarantee.Desktop.Controllers
 {
@@ -37,6 +40,20 @@ namespace BankGuarantee.Desktop.Controllers
         internal static void ViewGuaranteeItemClosed(Form guaranteeViewForm)
         {
             _guaranteeFormOpener.OnGuaranteeViewClosed(guaranteeViewForm);
+        }
+        internal static OperationExecutedDto AddGuarantee(Guarantee guarantee)
+        {
+            try
+            {
+                _bankGuaranteeContext.Guarantees.Add(guarantee);
+                _bankGuaranteeContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return new OperationExecutedDto(Resources.DatabaseError + ex.Message);
+            }
+
+            return OperationExecutedDto.Success;
         }
     }
 }

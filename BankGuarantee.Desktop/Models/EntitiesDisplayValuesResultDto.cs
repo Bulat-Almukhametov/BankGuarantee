@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace BankGuarantee.Desktop.Models
 {
-    class GetOrganizationNamesResultDto
+    class EntitiesDisplayValuesResultDto
     {
-        public GetOrganizationNamesResultDto(string errorText)
+        public EntitiesDisplayValuesResultDto(string errorText)
         {
             Success = false;
             ErrorText = errorText;
         }
-        public GetOrganizationNamesResultDto(Dictionary<int, string> organizations)
+        public EntitiesDisplayValuesResultDto(Dictionary<int, string> entities)
         {
-            if (organizations == null)
-                throw new ArgumentNullException();
+            if (entities == null)
+                throw new ArgumentNullException(); 
 
             Success = true;
-            Organizations = organizations;
+            Entities = entities;
         }
         public bool Success { get; }
         public string ErrorText { get; }
-        public Dictionary<int, string> Organizations { get; }
+        public Dictionary<int, string> Entities { get; }
     }
 }
