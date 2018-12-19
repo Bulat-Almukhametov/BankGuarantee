@@ -13,5 +13,10 @@ namespace BankGuarantee.Domain.Models
         public decimal Amount { get; set; }
         public int Days { get; set; }
         public DateTime StartDate { get; set; }
+        public bool IsProtocolPublished { get; set; }
+        public bool IsRiskTerritory { get; set; }
+        public decimal ContractAmount { get; set; }
+        public bool GuaranteeAmountLessThanContract { get; set; }
+        public bool? Confirmed { get; set; }
     }
 }

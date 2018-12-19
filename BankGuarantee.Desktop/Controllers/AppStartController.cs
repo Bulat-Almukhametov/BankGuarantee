@@ -77,7 +77,7 @@ namespace BankGuarantee.Desktop.Controllers
                 if (person.Appointment == Appointment.Manager)
                     result.NextForm = new GuaranteeCreateForm();
                 else
-                    result.NextForm = new QuestionsForm();
+                    result.NextForm = new GuaranteesListForm();
             }
             else
             {
@@ -86,14 +86,6 @@ namespace BankGuarantee.Desktop.Controllers
             }
 
             return result;
-        }
-
-        internal static Form AnswerQuestions(int contractSum)
-        {
-            _bankGuaranteeContext.Contracts.Add(new Contract { CreatedOn = DateTime.Now, Ammount = contractSum});
-            _bankGuaranteeContext.SaveChanges();
-
-            return new GuaranteesListForm();
         }
     }
 }

@@ -117,25 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BankGuarantee" xml:space="preserve">
-    <value>Банковская гарантия </value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="Confirmed" xml:space="preserve">
-    <value>Утверждено</value>
-  </data>
-  <data name="CreateNew" xml:space="preserve">
-    <value>Создать</value>
-  </data>
-  <data name="CredentialsDenied" xml:space="preserve">
-    <value>Введены неправильные данные для входа</value>
-  </data>
-  <data name="DatabaseError" xml:space="preserve">
-    <value>Во время работы с базой данных произошла ошибка</value>
-  </data>
-  <data name="Declined" xml:space="preserve">
-    <value>Отклонено</value>
-  </data>
-  <data name="WrongId" xml:space="preserve">
-    <value>Не найдено записей с заданным идентификатором</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

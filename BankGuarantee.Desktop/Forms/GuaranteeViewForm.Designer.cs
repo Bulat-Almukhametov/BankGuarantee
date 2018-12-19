@@ -50,17 +50,47 @@
             this.chiefExecutiveTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.notProtocolPublishedRadioButton = new System.Windows.Forms.RadioButton();
+            this.protocolPublishedRadioButton = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.notRiskTerritoryRadioButton = new System.Windows.Forms.RadioButton();
+            this.riskTerritoryRadioButton = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.notGuaranteeAmountLessRadioButton = new System.Windows.Forms.RadioButton();
+            this.guaranteeAmountLessRadioButton = new System.Windows.Forms.RadioButton();
+            this.contractAmountNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.submitButton = new System.Windows.Forms.Button();
+            this.declineButton = new System.Windows.Forms.Button();
+            this.confirmButtonsGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.confirmPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contractAmountNumericUpDown)).BeginInit();
+            this.confirmButtonsGroupBox.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.confirmPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(415, 68);
+            this.label2.Location = new System.Drawing.Point(181, 488);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Срок";
+            this.label2.Text = "дней";
             // 
             // founderTextBox
             // 
@@ -159,7 +189,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(278, 68);
+            this.label1.Location = new System.Drawing.Point(72, 421);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 10;
@@ -186,7 +216,7 @@
             // 
             // ammountTextBox
             // 
-            this.ammountTextBox.Location = new System.Drawing.Point(281, 84);
+            this.ammountTextBox.Location = new System.Drawing.Point(75, 437);
             this.ammountTextBox.Name = "ammountTextBox";
             this.ammountTextBox.ReadOnly = true;
             this.ammountTextBox.Size = new System.Drawing.Size(100, 20);
@@ -194,7 +224,7 @@
             // 
             // periodTextBox
             // 
-            this.periodTextBox.Location = new System.Drawing.Point(418, 84);
+            this.periodTextBox.Location = new System.Drawing.Point(75, 485);
             this.periodTextBox.Name = "periodTextBox";
             this.periodTextBox.ReadOnly = true;
             this.periodTextBox.Size = new System.Drawing.Size(100, 20);
@@ -239,7 +269,7 @@
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(542, 374);
+            this.backButton.Location = new System.Drawing.Point(552, 528);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(75, 23);
             this.backButton.TabIndex = 18;
@@ -247,13 +277,270 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.notProtocolPublishedRadioButton);
+            this.groupBox3.Controls.Add(this.protocolPublishedRadioButton);
+            this.groupBox3.Location = new System.Drawing.Point(25, 25);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(133, 58);
+            this.groupBox3.TabIndex = 24;
+            this.groupBox3.TabStop = false;
+            // 
+            // notProtocolPublishedRadioButton
+            // 
+            this.notProtocolPublishedRadioButton.AutoSize = true;
+            this.notProtocolPublishedRadioButton.Location = new System.Drawing.Point(7, 33);
+            this.notProtocolPublishedRadioButton.Name = "notProtocolPublishedRadioButton";
+            this.notProtocolPublishedRadioButton.Size = new System.Drawing.Size(44, 17);
+            this.notProtocolPublishedRadioButton.TabIndex = 0;
+            this.notProtocolPublishedRadioButton.TabStop = true;
+            this.notProtocolPublishedRadioButton.Text = "Нет";
+            this.notProtocolPublishedRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // protocolPublishedRadioButton
+            // 
+            this.protocolPublishedRadioButton.AutoSize = true;
+            this.protocolPublishedRadioButton.Location = new System.Drawing.Point(7, 10);
+            this.protocolPublishedRadioButton.Name = "protocolPublishedRadioButton";
+            this.protocolPublishedRadioButton.Size = new System.Drawing.Size(40, 17);
+            this.protocolPublishedRadioButton.TabIndex = 0;
+            this.protocolPublishedRadioButton.TabStop = true;
+            this.protocolPublishedRadioButton.Text = "Да";
+            this.protocolPublishedRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.notRiskTerritoryRadioButton);
+            this.groupBox2.Controls.Add(this.riskTerritoryRadioButton);
+            this.groupBox2.Location = new System.Drawing.Point(25, 112);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(133, 58);
+            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabStop = false;
+            // 
+            // notRiskTerritoryRadioButton
+            // 
+            this.notRiskTerritoryRadioButton.AutoSize = true;
+            this.notRiskTerritoryRadioButton.Location = new System.Drawing.Point(7, 33);
+            this.notRiskTerritoryRadioButton.Name = "notRiskTerritoryRadioButton";
+            this.notRiskTerritoryRadioButton.Size = new System.Drawing.Size(44, 17);
+            this.notRiskTerritoryRadioButton.TabIndex = 0;
+            this.notRiskTerritoryRadioButton.TabStop = true;
+            this.notRiskTerritoryRadioButton.Text = "Нет";
+            this.notRiskTerritoryRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // riskTerritoryRadioButton
+            // 
+            this.riskTerritoryRadioButton.AutoSize = true;
+            this.riskTerritoryRadioButton.Location = new System.Drawing.Point(7, 10);
+            this.riskTerritoryRadioButton.Name = "riskTerritoryRadioButton";
+            this.riskTerritoryRadioButton.Size = new System.Drawing.Size(40, 17);
+            this.riskTerritoryRadioButton.TabIndex = 0;
+            this.riskTerritoryRadioButton.TabStop = true;
+            this.riskTerritoryRadioButton.Text = "Да";
+            this.riskTerritoryRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.notGuaranteeAmountLessRadioButton);
+            this.groupBox1.Controls.Add(this.guaranteeAmountLessRadioButton);
+            this.groupBox1.Location = new System.Drawing.Point(25, 265);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(133, 58);
+            this.groupBox1.TabIndex = 26;
+            this.groupBox1.TabStop = false;
+            // 
+            // notGuaranteeAmountLessRadioButton
+            // 
+            this.notGuaranteeAmountLessRadioButton.AutoSize = true;
+            this.notGuaranteeAmountLessRadioButton.Location = new System.Drawing.Point(7, 33);
+            this.notGuaranteeAmountLessRadioButton.Name = "notGuaranteeAmountLessRadioButton";
+            this.notGuaranteeAmountLessRadioButton.Size = new System.Drawing.Size(44, 17);
+            this.notGuaranteeAmountLessRadioButton.TabIndex = 0;
+            this.notGuaranteeAmountLessRadioButton.TabStop = true;
+            this.notGuaranteeAmountLessRadioButton.Text = "Нет";
+            this.notGuaranteeAmountLessRadioButton.UseVisualStyleBackColor = true;
+            this.notGuaranteeAmountLessRadioButton.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // guaranteeAmountLessRadioButton
+            // 
+            this.guaranteeAmountLessRadioButton.AutoSize = true;
+            this.guaranteeAmountLessRadioButton.Location = new System.Drawing.Point(7, 10);
+            this.guaranteeAmountLessRadioButton.Name = "guaranteeAmountLessRadioButton";
+            this.guaranteeAmountLessRadioButton.Size = new System.Drawing.Size(40, 17);
+            this.guaranteeAmountLessRadioButton.TabIndex = 0;
+            this.guaranteeAmountLessRadioButton.TabStop = true;
+            this.guaranteeAmountLessRadioButton.Text = "Да";
+            this.guaranteeAmountLessRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // contractAmountNumericUpDown
+            // 
+            this.contractAmountNumericUpDown.DecimalPlaces = 2;
+            this.contractAmountNumericUpDown.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            131072});
+            this.contractAmountNumericUpDown.Location = new System.Drawing.Point(25, 208);
+            this.contractAmountNumericUpDown.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
+            this.contractAmountNumericUpDown.Minimum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            -2147483648});
+            this.contractAmountNumericUpDown.Name = "contractAmountNumericUpDown";
+            this.contractAmountNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.contractAmountNumericUpDown.TabIndex = 23;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(29, 249);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(292, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "4) Сумма банковской гарантии меньше цены контракта";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(18, 192);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(100, 13);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "3) Цена контракта";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(18, 96);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(172, 13);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "2) Территории с особым риском";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(18, 9);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(136, 13);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "1) Протокол опубликован";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(181, 440);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(42, 13);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "рублей";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(72, 469);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(32, 13);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Срок";
+            // 
+            // submitButton
+            // 
+            this.submitButton.Location = new System.Drawing.Point(11, 30);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(75, 23);
+            this.submitButton.TabIndex = 27;
+            this.submitButton.Text = "Утвердить";
+            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
+            // 
+            // declineButton
+            // 
+            this.declineButton.Location = new System.Drawing.Point(103, 30);
+            this.declineButton.Name = "declineButton";
+            this.declineButton.Size = new System.Drawing.Size(75, 23);
+            this.declineButton.TabIndex = 28;
+            this.declineButton.Text = "Отклонить";
+            this.declineButton.UseVisualStyleBackColor = true;
+            // 
+            // confirmButtonsGroupBox
+            // 
+            this.confirmButtonsGroupBox.Controls.Add(this.submitButton);
+            this.confirmButtonsGroupBox.Controls.Add(this.declineButton);
+            this.confirmButtonsGroupBox.Location = new System.Drawing.Point(25, 329);
+            this.confirmButtonsGroupBox.Name = "confirmButtonsGroupBox";
+            this.confirmButtonsGroupBox.Size = new System.Drawing.Size(191, 66);
+            this.confirmButtonsGroupBox.TabIndex = 29;
+            this.confirmButtonsGroupBox.TabStop = false;
+            this.confirmButtonsGroupBox.Text = "Согласование";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.linkLabel2);
+            this.groupBox5.Controls.Add(this.linkLabel1);
+            this.groupBox5.Location = new System.Drawing.Point(319, 12);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(329, 79);
+            this.groupBox5.TabIndex = 30;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Ссылки";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(6, 25);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(222, 13);
+            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Сведения о государственной регистрации";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(6, 52);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(269, 13);
+            this.linkLabel2.TabIndex = 0;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Единая информационная система в сфере закупок";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // confirmPanel
+            // 
+            this.confirmPanel.Controls.Add(this.confirmButtonsGroupBox);
+            this.confirmPanel.Controls.Add(this.label13);
+            this.confirmPanel.Controls.Add(this.label9);
+            this.confirmPanel.Controls.Add(this.label12);
+            this.confirmPanel.Controls.Add(this.groupBox3);
+            this.confirmPanel.Controls.Add(this.label11);
+            this.confirmPanel.Controls.Add(this.contractAmountNumericUpDown);
+            this.confirmPanel.Controls.Add(this.groupBox2);
+            this.confirmPanel.Controls.Add(this.groupBox1);
+            this.confirmPanel.Location = new System.Drawing.Point(298, 97);
+            this.confirmPanel.Name = "confirmPanel";
+            this.confirmPanel.Size = new System.Drawing.Size(350, 411);
+            this.confirmPanel.TabIndex = 31;
+            // 
             // GuaranteeViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 424);
+            this.ClientSize = new System.Drawing.Size(660, 563);
+            this.Controls.Add(this.confirmPanel);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.periodTextBox);
             this.Controls.Add(this.ammountTextBox);
@@ -264,11 +551,23 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GuaranteeViewForm";
-            this.Text = "Просмотр банковской гарантии: ";
+            this.Text = "Решение не принято";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GuaranteeViewForm_FormClosed);
             this.Load += new System.EventHandler(this.GuaranteeViewForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contractAmountNumericUpDown)).EndInit();
+            this.confirmButtonsGroupBox.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.confirmPanel.ResumeLayout(false);
+            this.confirmPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,5 +596,28 @@
         private System.Windows.Forms.TextBox chiefExecutiveTextBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton notProtocolPublishedRadioButton;
+        private System.Windows.Forms.RadioButton protocolPublishedRadioButton;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton notRiskTerritoryRadioButton;
+        private System.Windows.Forms.RadioButton riskTerritoryRadioButton;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton notGuaranteeAmountLessRadioButton;
+        private System.Windows.Forms.RadioButton guaranteeAmountLessRadioButton;
+        private System.Windows.Forms.NumericUpDown contractAmountNumericUpDown;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.Button declineButton;
+        private System.Windows.Forms.GroupBox confirmButtonsGroupBox;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Panel confirmPanel;
     }
 }

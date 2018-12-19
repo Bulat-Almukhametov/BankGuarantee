@@ -94,12 +94,6 @@
     <Compile Include="Forms\OrganizationCreateForm.Designer.cs">
       <DependentUpon>OrganizationCreateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\QuestionsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\QuestionsForm.Designer.cs">
-      <DependentUpon>QuestionsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Interfaces\IGuaranteeViewOpener.cs" />
     <Compile Include="Interfaces\IOrganizationCreator.cs" />
     <Compile Include="Migrations\201812111750295_InitialCreate.cs" />
@@ -118,9 +112,14 @@
     <Compile Include="Migrations\201812181825078_CreateContract.Designer.cs">
       <DependentUpon>201812181825078_CreateContract.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812191718555_DeleteContract.cs" />
+    <Compile Include="Migrations\201812191718555_DeleteContract.Designer.cs">
+      <DependentUpon>201812191718555_DeleteContract.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EntitiesDisplayValuesResultDto.cs" />
     <Compile Include="Models\EntityCreatedDto.cs" />
+    <Compile Include="Models\GuaranteeConfirmation.cs" />
     <Compile Include="Models\LoginInputDto.cs" />
     <Compile Include="Models\LoginResultDto.cs" />
     <Compile Include="Models\OperationExecutedDto.cs" />
@@ -141,9 +140,6 @@
     <EmbeddedResource Include="Forms\OrganizationCreateForm.resx">
       <DependentUpon>OrganizationCreateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QuestionsForm.resx">
-      <DependentUpon>QuestionsForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812111750295_InitialCreate.resx">
       <DependentUpon>201812111750295_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812181825078_CreateContract.resx">
       <DependentUpon>201812181825078_CreateContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812191718555_DeleteContract.resx">
+      <DependentUpon>201812191718555_DeleteContract.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -70,6 +70,15 @@ namespace BankGuarantee.Desktop.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Утверждено.
+        /// </summary>
+        internal static string Confirmed {
+            get {
+                return ResourceManager.GetString("Confirmed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Создать.
         /// </summary>
         internal static string CreateNew {
@@ -93,6 +102,15 @@ namespace BankGuarantee.Desktop.Properties {
         internal static string DatabaseError {
             get {
                 return ResourceManager.GetString("DatabaseError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отклонено.
+        /// </summary>
+        internal static string Declined {
+            get {
+                return ResourceManager.GetString("Declined", resourceCulture);
             }
         }
         

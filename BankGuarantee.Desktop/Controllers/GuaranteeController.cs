@@ -38,7 +38,7 @@ namespace BankGuarantee.Desktop.Controllers
         {
             _guaranteeFormOpener = guaranteeFormOpener;
 
-            var guarantee =_bankGuaranteeContext.Guarantees
+            var guarantee = _bankGuaranteeContext.Guarantees
                 .Include(g => g.Organization)
                 .Include(g => g.Organization.Founder)
                 .Include(g => g.Organization.ChiefExecutive)
@@ -68,6 +68,29 @@ namespace BankGuarantee.Desktop.Controllers
             }
 
             return OperationExecutedDto.Success;
+        }
+
+        internal static OperationExecutedDto Confirm(GuaranteeConfirmation confirmation)
+        {
+            try
+            {
+                var guarantee = _bankGuaranteeContext.Guarantees.First(g => g.Id == confirmation.GuaranteeId);
+
+                guarantee.IsProtocolPublished = confirmation.IsProtocolPublished;
+                guarantee.IsRiskTerritory = confirmation.IsRiskTerritory;
+                guarantee.ContractAmount = confirmation.ContractAmount;
+                guarantee.GuaranteeAmountLessThanContract = confirmation.GuaranteeAmountLessThanContract;
+                guarantee.Confirmed = confirmation.Confirmed;
+
+                _bankGuaranteeContext.Entry(guarantee).State = EntityState.Modified;
+                _bankGuaranteeContext.SaveChanges();
+
+                return OperationExecutedDto.Success;
+            }
+            catch (Exception ex)
+            {
+                return new OperationExecutedDto(Resources.DatabaseError + ex.Message);
+            }
         }
     }
 }
