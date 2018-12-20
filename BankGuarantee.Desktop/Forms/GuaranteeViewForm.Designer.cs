@@ -70,8 +70,8 @@
             this.declineButton = new System.Windows.Forms.Button();
             this.confirmButtonsGroupBox = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.confirmPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -269,7 +269,7 @@
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(552, 528);
+            this.backButton.Location = new System.Drawing.Point(536, 629);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(75, 23);
             this.backButton.TabIndex = 18;
@@ -485,23 +485,12 @@
             // 
             this.groupBox5.Controls.Add(this.linkLabel2);
             this.groupBox5.Controls.Add(this.linkLabel1);
-            this.groupBox5.Location = new System.Drawing.Point(319, 12);
+            this.groupBox5.Location = new System.Drawing.Point(282, 84);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(329, 79);
             this.groupBox5.TabIndex = 30;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Ссылки";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(6, 25);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(222, 13);
-            this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Сведения о государственной регистрации";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // linkLabel2
             // 
@@ -514,6 +503,17 @@
             this.linkLabel2.Text = "Единая информационная система в сфере закупок";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(6, 25);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(222, 13);
+            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Сведения о государственной регистрации";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // confirmPanel
             // 
             this.confirmPanel.Controls.Add(this.confirmButtonsGroupBox);
@@ -525,7 +525,7 @@
             this.confirmPanel.Controls.Add(this.contractAmountNumericUpDown);
             this.confirmPanel.Controls.Add(this.groupBox2);
             this.confirmPanel.Controls.Add(this.groupBox1);
-            this.confirmPanel.Location = new System.Drawing.Point(298, 97);
+            this.confirmPanel.Location = new System.Drawing.Point(282, 198);
             this.confirmPanel.Name = "confirmPanel";
             this.confirmPanel.Size = new System.Drawing.Size(350, 411);
             this.confirmPanel.TabIndex = 31;
@@ -534,7 +534,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 563);
+            this.ClientSize = new System.Drawing.Size(660, 675);
             this.Controls.Add(this.confirmPanel);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.backButton);

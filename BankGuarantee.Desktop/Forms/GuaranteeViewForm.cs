@@ -3,13 +3,6 @@ using BankGuarantee.Desktop.Models;
 using BankGuarantee.Desktop.Properties;
 using BankGuarantee.Domain.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BankGuarantee.Desktop.Forms
@@ -18,9 +11,11 @@ namespace BankGuarantee.Desktop.Forms
     {
         private Guarantee _guarantee;
         private bool _backNavigation = false;
-        public GuaranteeViewForm(Guarantee guarantee)
+        private bool _enableConfirmation;
+        public GuaranteeViewForm(Guarantee guarantee, bool enableConfirmation)
         {
             _guarantee = guarantee;
+            _enableConfirmation = enableConfirmation;
 
             InitializeComponent();
         }
@@ -57,7 +52,7 @@ namespace BankGuarantee.Desktop.Forms
             guaranteeAmountLessRadioButton.Checked = _guarantee.GuaranteeAmountLessThanContract;
             notGuaranteeAmountLessRadioButton.Checked = !_guarantee.GuaranteeAmountLessThanContract;
 
-            confirmPanel.Enabled = !_guarantee.Confirmed.HasValue;
+            confirmPanel.Enabled = _enableConfirmation;
             if (_guarantee.Confirmed.HasValue)
             {
                 this.Text = _guarantee.Confirmed.Value ? Resources.Confirmed : Resources.Declined;
@@ -92,6 +87,7 @@ namespace BankGuarantee.Desktop.Forms
             if (result.Executed)
             {
                 confirmPanel.Enabled = false;
+                this.Text = confirmed ? Resources.Confirmed : Resources.Declined;
             }
             else
             {

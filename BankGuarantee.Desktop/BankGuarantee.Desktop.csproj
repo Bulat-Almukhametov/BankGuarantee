@@ -70,11 +70,17 @@
     <Compile Include="Forms\GuaranteeCreateForm.Designer.cs">
       <DependentUpon>GuaranteeCreateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\GuaranteesListForm.cs">
+    <Compile Include="Forms\GuaranteesListFormSpecialist.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\GuaranteesListForm.Designer.cs">
-      <DependentUpon>GuaranteesListForm.cs</DependentUpon>
+    <Compile Include="Forms\GuaranteesListFormSpecialist.Designer.cs">
+      <DependentUpon>GuaranteesListFormSpecialist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GuaranteesListFormManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GuaranteesListFormManager.Designer.cs">
+      <DependentUpon>GuaranteesListFormManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\GuaranteeViewForm.cs">
       <SubType>Form</SubType>
@@ -128,8 +134,11 @@
     <EmbeddedResource Include="Forms\GuaranteeCreateForm.resx">
       <DependentUpon>GuaranteeCreateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\GuaranteesListForm.resx">
-      <DependentUpon>GuaranteesListForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\GuaranteesListFormManager.resx">
+      <DependentUpon>GuaranteesListFormManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GuaranteesListFormSpecialist.resx">
+      <DependentUpon>GuaranteesListFormSpecialist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GuaranteeViewForm.resx">
       <DependentUpon>GuaranteeViewForm.cs</DependentUpon>

@@ -2,7 +2,7 @@
 
 namespace BankGuarantee.Desktop.Forms
 {
-    partial class GuaranteesListForm
+    partial class GuaranteesListFormSpecialist
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace BankGuarantee.Desktop.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuaranteesListForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuaranteesListFormSpecialist));
             this.guaranteesDataGridView = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bankGuaranteeDataSet = new BankGuarantee.Desktop.DbIntegration.BankGuaranteeDataSet();
@@ -151,11 +151,6 @@ namespace BankGuarantee.Desktop.Forms
         #endregion
 
         private System.Windows.Forms.DataGridView guaranteesDataGridView;
-        private System.Windows.Forms.BindingSource guaranteesBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn daysDataGridViewTextBoxColumn;
         private BankGuaranteeDataSet bankGuaranteeDataSet;
         private System.Windows.Forms.BindingSource bindingSource1;
         private DbIntegration.BankGuaranteeDataSetTableAdapters.GuaranteesTableAdapter guaranteesTableAdapter;

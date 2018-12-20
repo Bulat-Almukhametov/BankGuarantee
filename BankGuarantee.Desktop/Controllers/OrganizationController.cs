@@ -18,7 +18,7 @@ namespace BankGuarantee.Desktop.Controllers
     static class OrganizationController
     {
         static BankGuaranteeContext _bankGuaranteeContext;
-        static IOrganizationCreator _organizationCreator;
+        static IEntityCreator _organizationCreator;
         static OrganizationController()
         {
             // создаем объект для подключения к БД
@@ -94,7 +94,7 @@ namespace BankGuarantee.Desktop.Controllers
         /// </summary>
         /// <param name="organizationCreator"></param>
         /// <returns></returns>
-        static internal Form CreateNew(IOrganizationCreator organizationCreator)
+        static internal Form CreateNew(IEntityCreator organizationCreator)
         {
             // запоминаем окно, из которого мы перешли на новую страницу
             _organizationCreator = organizationCreator;

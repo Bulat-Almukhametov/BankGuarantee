@@ -21,6 +21,7 @@ namespace BankGuarantee.Desktop.Controllers
     {
         static BankGuaranteeContext _bankGuaranteeContext;
         static IGuaranteeViewOpener _guaranteeFormOpener;
+        static IEntityCreator _guaranteeCreator;
 
         static GuaranteeController()
         {
@@ -34,7 +35,7 @@ namespace BankGuarantee.Desktop.Controllers
         /// <param name="guaranteeId">идентификатор записи</param>
         /// <param name="guaranteeFormOpener">ссылка на форму, открывшую подробности</param>
         /// <returns></returns>
-        internal static Form ViewGuaranteeItem(int guaranteeId, IGuaranteeViewOpener guaranteeFormOpener)
+        internal static Form ViewGuaranteeItem(int guaranteeId, IGuaranteeViewOpener guaranteeFormOpener, bool enableConfirmation = true)
         {
             _guaranteeFormOpener = guaranteeFormOpener;
 
@@ -43,8 +44,8 @@ namespace BankGuarantee.Desktop.Controllers
                 .Include(g => g.Organization.Founder)
                 .Include(g => g.Organization.ChiefExecutive)
                 .First(g => g.Id == guaranteeId);
-
-            return new GuaranteeViewForm(guarantee);
+            enableConfirmation = enableConfirmation && !guarantee.Confirmed.HasValue;
+            return new GuaranteeViewForm(guarantee, enableConfirmation);
         }
 
         /// <summary>
@@ -59,14 +60,14 @@ namespace BankGuarantee.Desktop.Controllers
         {
             try
             {
-                _bankGuaranteeContext.Guarantees.Add(guarantee);
+                guarantee = _bankGuaranteeContext.Guarantees.Add(guarantee);
                 _bankGuaranteeContext.SaveChanges();
             }
             catch (Exception ex)
             {
                 return new OperationExecutedDto(Resources.DatabaseError + ex.Message);
             }
-
+            _guaranteeCreator.OnCreated(new EntityCreatedDto(guarantee.Id, guarantee.Name));
             return OperationExecutedDto.Success;
         }
 
@@ -91,6 +92,12 @@ namespace BankGuarantee.Desktop.Controllers
             {
                 return new OperationExecutedDto(Resources.DatabaseError + ex.Message);
             }
+        }
+
+        internal static Form CreateNew(IEntityCreator creator)
+        {
+            _guaranteeCreator = creator;
+            return new GuaranteeCreateForm();
         }
     }
 }

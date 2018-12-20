@@ -16,10 +16,11 @@ using System.Windows.Forms;
 
 namespace BankGuarantee.Desktop.Forms
 {
-    public partial class GuaranteeCreateForm : Form, IOrganizationCreator
+    public partial class GuaranteeCreateForm : Form, IEntityCreator
     {
         const int CREATE_NEW_KEY = -1;
         private Dictionary<int, string> _organizationsDictionary;
+        private bool _closeApp = true;
         public GuaranteeCreateForm()
         {
             InitializeComponent();
@@ -46,7 +47,8 @@ namespace BankGuarantee.Desktop.Forms
 
         private void GuaranteeCreateForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            AppStartController.CloseApp();
+            if (_closeApp)
+                AppStartController.CloseApp();
         }
 
         private void organizationsComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,7 +77,7 @@ namespace BankGuarantee.Desktop.Forms
             ageTextBox.Text = (DateTime.Now.Year - organization.FoundedYear).ToString();
         }
 
-        void IOrganizationCreator.OnCreated(EntityCreatedDto entityInfo)
+        void IEntityCreator.OnCreated(EntityCreatedDto entityInfo)
         {
             if (entityInfo.Success)
             {
@@ -100,8 +102,8 @@ namespace BankGuarantee.Desktop.Forms
 
             if (guaranteeAddResult.Executed)
             {
-                amountTextBox.Text = String.Empty;
-                periodTextBox.Text = String.Empty;
+                _closeApp = false;
+                this.Close();
             }
             else
             {

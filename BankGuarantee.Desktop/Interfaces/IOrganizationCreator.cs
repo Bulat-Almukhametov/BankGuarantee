@@ -7,7 +7,7 @@ using BankGuarantee.Desktop.Models;
 
 namespace BankGuarantee.Desktop.Interfaces
 {
-    interface IOrganizationCreator
+    interface IEntityCreator
     {
         void OnCreated(EntityCreatedDto entityInfo);
     }

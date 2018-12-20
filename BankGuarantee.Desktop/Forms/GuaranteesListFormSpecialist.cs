@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace BankGuarantee.Desktop.Forms
 {
-    public partial class GuaranteesListForm : Form, IGuaranteeViewOpener
+    public partial class GuaranteesListFormSpecialist : Form, IGuaranteeViewOpener
     {
-        public GuaranteesListForm()
+        public GuaranteesListFormSpecialist()
         {
             InitializeComponent();
         }
@@ -45,13 +45,11 @@ namespace BankGuarantee.Desktop.Forms
                 Form guaranteeForm = GuaranteeController.ViewGuaranteeItem(guaranteeId, this);
                 this.Hide();
                 guaranteeForm.Show();
-                LocationHelper.PassLocationToNextForm(this, guaranteeForm);
             }
         }
 
         public void OnGuaranteeViewClosed(Form guaranteeViewForm)
         {
-            LocationHelper.PassLocationToNextForm(guaranteeViewForm, this);
             this.Show();
         }
     }

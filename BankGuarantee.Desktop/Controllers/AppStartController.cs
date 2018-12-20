@@ -75,9 +75,9 @@ namespace BankGuarantee.Desktop.Controllers
             {
                 // открываем соответствующие страницы для менеджера и специалиста
                 if (person.Appointment == Appointment.Manager)
-                    result.NextForm = new GuaranteeCreateForm();
+                    result.NextForm = new GuaranteesListFormManager();
                 else
-                    result.NextForm = new GuaranteesListForm();
+                    result.NextForm = new GuaranteesListFormSpecialist();
             }
             else
             {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankGuarantee.Desktop.Models
 {
-    class EntityCreatedDto
+    public class EntityCreatedDto
     {
         static internal EntityCreatedDto Canceled
         {
